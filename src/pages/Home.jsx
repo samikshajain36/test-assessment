@@ -6,7 +6,12 @@ import axios from 'axios'
 const MovieList = () => {
   const [movie, setMovie] = useState([])
   const fetchData = async () => {
-    const response = await axios.get("http://jsonplaceholder.typicode.com/posts")
+  const response = await axios.get("http://jsonplaceholder.typicode.com/posts", {
+    headers: { 
+      'Access-Control-Allow-Origin' : '*',
+      'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+    },
+  })
       .then((res) => {
         setMovie(res.data)
         console.log("API Data:- ", res.data)
