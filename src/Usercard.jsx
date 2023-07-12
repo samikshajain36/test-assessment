@@ -7,7 +7,7 @@ const Usercard = () => {
 
   const param = useParams()
   useEffect(() => {
-    axios(`http://jsonplaceholder.typicode.com/posts/${param._id}`).then(res => setPost(res.data))
+    axios(`https://jsonplaceholder.typicode.com/posts/${param._id}`).then(res => setPost(res.data))
   }, [])
 
   return (
